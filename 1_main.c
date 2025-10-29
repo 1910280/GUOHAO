@@ -3,21 +3,24 @@
 //郭昊天
 #include <stdio.h>
 int main() {
-    int num, digit1, digit2, digit3; 
-    int count = 0; 
-
-    for (num = 100; num <= 999; num++) {
-        digit1 = num / 100;          
-        digit2 = (num / 10) % 10;    
-        digit3 = num % 10;           
- if (digit1*digit1*digit1 + digit2*digit2*digit2 + digit3*digit3*digit3 == num) {
-            if (count > 0) { 
-                printf(" ");
+    int n, is_prime = 1, i = 2; 
+    printf("请输入小于50的正整数：");
+    scanf("%d", &n);
+    if (n == 1) {
+        is_prime = 0;
+    } else {
+        while (i < n) {
+            if (n % i == 0) {
+                is_prime = 0;
+                break;
             }
-            printf("%d", num);
-            count++; 
+            i++; 
         }
     }
-    printf("\n");
+    if (is_prime == 1) {
+        printf("密钥安全，密码设置成功\n");
+    } else {
+        printf("密钥不安全，请重新输入\n");
+    }
     return 0;
 }
