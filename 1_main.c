@@ -4,13 +4,16 @@
 #include <stdio.h>
 int main() {
     int arr[5];
-    int sum = 0;
-    printf("请输入4个整数：");
-    for (int i = 0; i < 4; i++) {
-        scanf("%d", &arr[i]);
-        sum += arr[i]; 
+    int count = 0; 
+    printf("请输入整数（奇数需重新输入，共需5个偶数）：\n");
+    while (count < 5) {
+        int num;
+        scanf("%d", &num); 
+        if (num % 2 == 0) { 
+            arr[count] = num; 
+            count++; 
+        }
     }
-    arr[4] = sum; 
     for (int i = 0; i < 5; i++) {
         if (i > 0) {
             printf(" ");
