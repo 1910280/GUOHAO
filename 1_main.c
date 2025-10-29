@@ -3,22 +3,19 @@
 //郭昊天
 #include <stdio.h>
 int main() {
-    int num = 100; 
-    int digit1, digit2, digit3;
-    int count = 0; 
-    while (num <= 999) {
-        digit1 = num / 100;
-        digit2 = (num / 10) % 10;
-        digit3 = num % 10;
-
-        if (digit1*digit1*digit1 + digit2*digit2*digit2 + digit3*digit3*digit3 == num) {
-            if (count > 0) {
-                printf(" ");
-            }
-            printf("%d", num);
-            count++;
+    int arr[5];
+    int sum = 0;
+    printf("请输入4个整数：");
+    for (int i = 0; i < 4; i++) {
+        scanf("%d", &arr[i]);
+        sum += arr[i]; 
+    }
+    arr[4] = sum; 
+    for (int i = 0; i < 5; i++) {
+        if (i > 0) {
+            printf(" ");
         }
-        num++; 
+        printf("%d", arr[i]);
     }
     printf("\n");
     return 0;
