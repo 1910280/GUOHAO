@@ -3,22 +3,12 @@
 //郭昊天
 #include <stdio.h>
 int main() {
-    int arr[5]; 
-    printf("请输入4个学号（空格分隔）：");
-    for (int i = 0; i < 4; i++) {
-        scanf("%d", &arr[i]);
+    int arr[3][3];
+    for (int i = 0; i < 3; i++) {
+        scanf("%d %d %d", &arr[i][0], &arr[i][1], &arr[i][2]);
     }
-    for (int i = 4; i > 0; i--) {
-        arr[i] = arr[i - 1];
+    for (int i = 0; i < 3; i++) {
+        printf("%d %d %d \n", arr[i][0], arr[i][1], arr[i][2]);
     }
-
-    arr[0] = 0;
-    for (int i = 0; i < 5; i++) {
-        if (i > 0) {
-            printf(" ");
-        }
-        printf("%d", arr[i]);
-    }
-    printf("\n");
     return 0;
 }
