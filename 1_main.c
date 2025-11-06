@@ -2,19 +2,12 @@
 //2689462020@qq.com
 //郭昊天
 #include <stdio.h>
-int power(int a, int b) {
-    int result = 1;
-    for (int i = 0; i < b; i++) {
-        result *= a;
-    }
-    return result;
+int arithmeticSum(int a1, int an, int step) {
+    int n = ((an - a1) / step) + 1;  
+    return (a1 + an) * n / 2;
 }
-
 int main() {
-    int sum = 0;
-    for (int i = 1; i <= 5; i++) {
-        sum += power(i, 2);
-    }
-    printf("%d\n", sum);  
+    int sum = arithmeticSum(1, 100, 1);
+    printf("%d\n", sum); 
     return 0;
 }
