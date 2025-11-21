@@ -2,13 +2,13 @@
 //2689462020@qq.com
 //郭昊天
 #include <stdio.h>
-// 自定义函数：参数1为数组指针，参数2为数组长度
-void incrementArr(int *ptr, int len) {
+// 自定义函数：参数1为数组指针，参数2为数组长度（固定为5）
+void shiftRight(int *ptr_arr, int len) {
     int i;
-    // 指针遍历数组，每个元素自增1
-    for (i = 0; i < len; i++) {
-        *(ptr + i) += 1;  
+    for (i = len - 1; i > 0; i--) {
+        *(ptr_arr + i) = *(ptr_arr + i - 1);
     }
+    *ptr_arr = 0;
 }
 
 int main() {
@@ -17,7 +17,9 @@ int main() {
     for (i = 0; i < 5; i++) {
         scanf("%d", &arr[i]);
     }
-    incrementArr(arr, 5);
+    
+    shiftRight(arr, 5);
+
     for (i = 0; i < 5; i++) {
         printf("%d ", arr[i]);
     }
