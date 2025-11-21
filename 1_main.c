@@ -2,28 +2,20 @@
 //2689462020@qq.com
 //郭昊天
 #include <stdio.h>
-// 自定义函数：参数1为数组指针，参数2为数组长度（固定为5）
-void shiftRight(int *ptr_arr, int len) {
-    int i;
-    for (i = len - 1; i > 0; i--) {
-        *(ptr_arr + i) = *(ptr_arr + i - 1);
-    }
-    *ptr_arr = 0;
-}
-
 int main() {
-    int arr[5];
+ int *p = (int *)malloc(5 * sizeof(int)); 
     int i;
     for (i = 0; i < 5; i++) {
-        scanf("%d", &arr[i]);
+        scanf("%d", p + i);  
     }
     
-    shiftRight(arr, 5);
-
+   
     for (i = 0; i < 5; i++) {
-        printf("%d ", arr[i]);
+        printf("%d ", *(p + i));  
     }
     printf("\n");
+    free(p);
+    p = NULL;  // 指针置空，避免野指针
     
     return 0;
 }
