@@ -1,13 +1,21 @@
 //202510303229
 //2689462020@qq.com
 //郭昊天
-#include <stdio.h>
 int main() {
-    int a;
-    scanf("%d", &a);
-    int *p = &a;
-    *p += 10;
-    printf("%d,%d\n", a, *p);
+    int arr[5];
+    int i;
+    for (i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
+    }#include <stdio.h>
+
+    int *p = arr;
+    for (i = 0; i < 5; i++) {
+        *(p + i) *= 2; 
+    }
+    for (i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
     
     return 0;
 }
